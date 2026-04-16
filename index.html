@@ -431,11 +431,28 @@
     cursor: default;
   }
   .portfolio-card:hover { border-color: var(--border-green); transform: translateY(-4px); }
-  .portfolio-visual {
+
+ .portfolio-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Черно-зеленый эффект через фильтры */
+    filter: grayscale(100%) brightness(0.8) sepia(100%) hue-rotate(70deg) saturate(4);
+    transition: filter 0.5s ease, transform 0.5s ease;
+  }
+
+  .portfolio-card:hover .portfolio-visual img {
+    filter: none; /* Возврат реального цвета */
+    transform: scale(1.05);
+  }
+
+   
+ .portfolio-visual {
     aspect-ratio: 4/3;
     display: flex; align-items: center; justify-content: center;
     position: relative;
     overflow: hidden;
+   background: #000; /* Фон, чтобы не было просветов */
   }
   .portfolio-card:hover .portfolio-overlay { opacity: 1; }
   .portfolio-overlay {
@@ -872,12 +889,11 @@
     </div>
     <a href="https://t.me/raskdesign" target="_blank" class="btn-secondary" style="margin-bottom: 0.5rem;">Full portfolio on Telegram →</a>
   </div>
+
   <div class="portfolio-grid">
     <div class="portfolio-card reveal">
       <div class="portfolio-visual">
-        <div class="vis-stable">
-          <div class="logo-mark"></div>
-        </div>
+        <img src="stable.jpg" alt="STABLE Project">
         <div class="portfolio-overlay">
           <span style="font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: var(--green);">VIEW PROJECT →</span>
         </div>
@@ -885,15 +901,13 @@
       <div class="portfolio-info">
         <div class="portfolio-category">Logo Design · Web3</div>
         <div class="portfolio-title">STABLE</div>
-        <div class="portfolio-subtitle">Crypto project. Clean geometry, modern type — the feeling of reliability without excess.</div>
+        <div class="portfolio-subtitle">Crypto project. Clean geometry, modern type.</div>
       </div>
     </div>
 
     <div class="portfolio-card reveal reveal-delay-1">
       <div class="portfolio-visual">
-        <div class="vis-slavny">
-          <div class="vis-slavny-text">SLAVNY</div>
-        </div>
+        <img src="Slavny.jpg" alt="SLAVNY Project">
         <div class="portfolio-overlay">
           <span style="font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: var(--green);">VIEW PROJECT →</span>
         </div>
@@ -901,84 +915,51 @@
       <div class="portfolio-info">
         <div class="portfolio-category">Logo Design · Music</div>
         <div class="portfolio-title">SLAVNY</div>
-        <div class="portfolio-subtitle">DJ & content creator. Bold lettering, works everywhere from covers to event visuals.</div>
+        <div class="portfolio-subtitle">DJ & content creator. Bold lettering.</div>
       </div>
     </div>
 
     <div class="portfolio-card reveal reveal-delay-2">
       <div class="portfolio-visual">
-        <div class="vis-rinash">
-          <div class="vis-rinash-r">R</div>
-          <div class="vis-rinash-sub">Rinash Studio</div>
-        </div>
+        <img src="rinash.jpg" alt="RINASH Project">
         <div class="portfolio-overlay">
-          <span style="font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: #1a1a1a;">VIEW PROJECT →</span>
+          <span style="font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: var(--green);">VIEW PROJECT →</span>
         </div>
       </div>
       <div class="portfolio-info">
         <div class="portfolio-category">Logo Design · Fashion</div>
         <div class="portfolio-title">RINASH</div>
-        <div class="portfolio-subtitle">Fashion studio. Classic meets contemporary — elegant typography with character.</div>
+        <div class="portfolio-subtitle">Minimalist identity for a design studio.</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card reveal">
+      <div class="portfolio-visual">
+        <img src="p2pbet.jpg" alt="P2PBET Project">
+        <div class="portfolio-overlay">
+          <span style="font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: var(--green);">VIEW PROJECT →</span>
+        </div>
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-category">Web3 · Betting</div>
+        <div class="portfolio-title">P2PBET</div>
+        <div class="portfolio-subtitle">Visual identity for crypto platform.</div>
       </div>
     </div>
 
     <div class="portfolio-card reveal reveal-delay-1">
       <div class="portfolio-visual">
-        <div class="vis-social">
-          <div class="social-tile accent"><span>◈</span></div>
-          <div class="social-tile">WEB3</div>
-          <div class="social-tile">NFT</div>
-          <div class="social-tile accent"><span>↗</span></div>
-        </div>
+        <img src="web3.jpg" alt="WEB3 Project">
         <div class="portfolio-overlay">
           <span style="font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: var(--green);">VIEW PROJECT →</span>
         </div>
       </div>
       <div class="portfolio-info">
-        <div class="portfolio-category">Social Media · Web3</div>
-        <div class="portfolio-title">Web3 Community Content</div>
-        <div class="portfolio-subtitle">Visuals for Web3 teams and ambassador roles. Content that cuts through the noise.</div>
+        <div class="portfolio-category">UI/UX · Strategy</div>
+        <div class="portfolio-title">WEB3 ECOSYSTEM</div>
+        <div class="portfolio-subtitle">Complex visuals for decentralized networks.</div>
       </div>
     </div>
-
-    <div class="portfolio-card reveal reveal-delay-2">
-      <div class="portfolio-visual">
-        <div class="vis-banner">
-          <div class="vis-banner-text">
-            <em>P2PBET</em>
-            CAMPAIGN
-          </div>
-        </div>
-        <div class="portfolio-overlay">
-          <span style="font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: var(--green);">VIEW PROJECT →</span>
-        </div>
-      </div>
-      <div class="portfolio-info">
-        <div class="portfolio-category">Brand Identity · Crypto</div>
-        <div class="portfolio-title">P2PBET Visual Identity</div>
-        <div class="portfolio-subtitle">Crypto betting platform — translating blockchain concepts into campaign graphics.</div>
-      </div>
-    </div>
-
-    <div class="portfolio-card reveal reveal-delay-3">
-      <div class="portfolio-visual">
-        <div class="vis-brand">
-          <div class="brand-shape"></div>
-        </div>
-        <div class="portfolio-overlay">
-          <span style="font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: var(--green);">VIEW PROJECT →</span>
-        </div>
-      </div>
-      <div class="portfolio-info">
-        <div class="portfolio-category">Brand Identity · Tech</div>
-        <div class="portfolio-title">Brand Systems</div>
-        <div class="portfolio-subtitle">Full identity packages for tech and lifestyle startups — from concept to guidelines.</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="portfolio-cta reveal">
-    <a href="https://t.me/raskdesign" target="_blank" class="btn-primary">See all projects on Telegram →</a>
   </div>
 </section>
 
