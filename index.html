@@ -285,8 +285,7 @@
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
+    gap: 4rem;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -300,49 +299,47 @@
   }
   .about-text strong { color: var(--text); font-weight: 400; }
  .about-stats {
+    grid-column: 1 / -1; /* Растягивает блок на всю ширину сетки (обе колонки) */
     display: flex;
     justify-content: space-between;
-    gap: 15px;
-    margin-top: 3rem;
+    gap: 1.5rem;
+    margin-top: 4rem; /* Отступ от текста и карточек сверху */
+    width: 100%;
   }
   .stat-box {
     flex: 1;
-    padding: 1.5rem 0.5rem;
+    padding: 2rem 1rem;
     text-align: center;
     border: 1px solid var(--border);
     border-radius: 4px;
     background: var(--bg-2);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .stat-box:hover {
     border-color: var(--border-green);
-    transform: translateY(-5px);
     background: var(--bg-3);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px var(--green-glow-strong);
   }
 
   .stat-number {
     font-family: var(--font-display);
-    font-size: 2rem;
+    font-size: clamp(2rem, 4vw, 3rem); /* Адаптивный размер шрифта */
     font-weight: 800;
     color: var(--green);
-    margin-bottom: 0.5rem;
     line-height: 1;
+    margin-bottom: 0.8rem;
   }
 
   .stat-label {
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     color: var(--text-muted);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    line-height: 1.3;
+    line-height: 1.4;
   }
 
- @media (max-width: 768px) {
-    .about-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-  }
+ 
  
   .about-right {
     position: relative;
@@ -742,6 +739,11 @@
     #hero { padding: 0 1.5rem 5rem; }
     .hero-bottom { flex-direction: column; align-items: flex-start; }
     .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .about-stats { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      margin-top: 2rem;
+    }
     .services-grid { grid-template-columns: 1fr; }
     .portfolio-grid { grid-template-columns: 1fr; }
     .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
@@ -811,43 +813,38 @@
       <div class="section-label">About me</div>
       <h2 class="section-title">Where Web3<br>meets <em>sharp</em> design</h2>
       <p class="about-text">Graphic designer at the intersection of Web3 and visual communication. Specializing in <strong>logos, advertising banners, social media, and web design</strong> for crypto startups.</p>
-      <p class="about-text">I understand the market from the inside — I speak the same language as founders. <strong>20+ clients</strong> in Web3, tech, and lifestyle.</p>
-      
-      <div class="about-stats">
-        <div class="stat-box">
-          <div class="stat-number">7+</div>
-          <div class="stat-label">Years of<br>experience</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-number">20+</div>
-          <div class="stat-label">Web3<br>clients</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Deadline<br>accuracy</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-number">∞</div>
-          <div class="stat-label">Revisions<br>until perfect</div>
-        </div>
-      </div>
+      <p class="about-text">I understand the market from the inside — I participate in ecosystems at early stages and speak the same language as founders. <strong>20+ clients</strong> in Web3, tech, and lifestyle.</p>
     </div>
 
     <div class="about-right reveal reveal-delay-2">
       <div class="about-card">
         <div class="card-role">Freelance Graphic Designer</div>
         <div class="card-company">Independent · 2017 — Present</div>
-        <div class="card-desc">Logo systems, social media, pitch decks, and marketing visuals for Web3.</div>
+        <div class="card-desc">Logo systems, social media, pitch decks, and marketing visuals for Web3 projects.</div>
       </div>
       <div class="about-card">
         <div class="card-role">Graphic Designer</div>
         <div class="card-company">P2PBET · Crypto Betting Platform</div>
-        <div class="card-desc">Translated blockchain concepts into graphics for campaigns and social media.</div>
+        <div class="card-desc">Translated blockchain concepts into high-end graphics and social media identity.</div>
       </div>
-      <div class="about-card">
-        <div class="card-role">Web3 Visual Lead</div>
-        <div class="card-company">Various Projects · Ambassador Roles</div>
-        <div class="card-desc">Creating visuals that actually cut through the noise in the feed.</div>
+    </div>
+
+    <div class="about-stats reveal reveal-delay-3">
+      <div class="stat-box">
+        <div class="stat-number">7+</div>
+        <div class="stat-label">Years of<br>experience</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">20+</div>
+        <div class="stat-label">Web3<br>clients</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Deadline<br>accuracy</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">∞</div>
+        <div class="stat-label">Revisions<br>until perfect</div>
       </div>
     </div>
   </div>
